@@ -26,6 +26,8 @@ namespace :database do
       else
         execute %Q{sudo -u postgres psql -c "create database #{database_config["database"]};"}
         execute %Q{sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE #{database_config["database"]} to #{database_config["username"]};"}
+        # give the user SUPERUSER permission so it can create extensions like uuid-ossp in rails migration
+        execute %Q{sudo -u postgres psql -c "ALTER USER #{database_config["username"]} WITH SUPERUSER;"}
       end
     end
   end
