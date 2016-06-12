@@ -238,6 +238,19 @@ set(
 )
 ```
 
+## Tips
+
+### nginx
+
+It has disabled SSL3 because on security reason.
+
+There is also fix for Weak Diffie-Hellman and the Logjam Attack https://weakdh.org/
+in the file: `lib/capistrano/cookbook/templates/nginx.conf.erb`
+
+It requires to generate for the rails app in the `shared/config` directory the file `dhparams.pem`:
+
+    $ openssl dhparam -out dhparams.pem 2048
+
 ## Contributing
 
 1. Fork it ( http://github.com/talkingquickly/capistrano-cookbook/fork )
