@@ -1,0 +1,7 @@
+namespace :log_rotate do
+  task :set_root_owner do
+    on roles(:app) do
+      sudo "chown root:root #{shared_path}/config/log_rotation"
+    end
+  end
+end

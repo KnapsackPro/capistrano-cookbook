@@ -43,3 +43,5 @@ after 'deploy:setup_config', 'nginx:reload'
 # Restart monit so it will pick up any monit configurations
 # we've added
 after 'deploy:setup_config', 'monit:reload'
+
+after 'deploy:setup_config', 'log_rotate:set_root_owner'
