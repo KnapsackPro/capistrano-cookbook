@@ -27,7 +27,7 @@ module Capistrano
           },
           {
             source: "log_rotation",
-           link: "/etc/logrotate.d/{{full_app_name}}"
+            link: "/etc/logrotate.d/{{full_app_name}}"
           },
           {
             source: "monit",
