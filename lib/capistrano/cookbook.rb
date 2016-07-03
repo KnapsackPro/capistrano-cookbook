@@ -4,6 +4,7 @@ module Capistrano
   module Cookbook
     require 'capistrano/cookbook/check_revision'
     require 'capistrano/cookbook/logs'
+    require 'capistrano/cookbook/log_rotate'
     require 'capistrano/cookbook/monit'
     require 'capistrano/cookbook/nginx'
     require 'capistrano/cookbook/restart'
