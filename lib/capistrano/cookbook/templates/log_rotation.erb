@@ -1,5 +1,6 @@
 <%= fetch(:deploy_to) %>/shared/log/*.log {
     su deploy deploy
+    maxsize 1G
     daily
     missingok
     rotate 30
